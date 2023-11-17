@@ -53,6 +53,16 @@ public class PlayerMovement : MonoBehaviour
     {
         float hor = Input.GetAxis("Horizontal");
         myrigidbody.velocity = new Vector2(hor * 3, myrigidbody.velocity.y);
+
+        if(hor > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+
+        else if (hor < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
     }
 }
 
