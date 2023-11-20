@@ -15590,7 +15590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 8.5
   player: {fileID: 420792252}
-  checkRadius: 0.35
+  checkRadius: 0.1
   islayer:
     serializedVersion: 2
     m_Bits: 256
