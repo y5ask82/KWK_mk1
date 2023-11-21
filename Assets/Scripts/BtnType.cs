@@ -34,11 +34,11 @@ public class BtnType : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 if (isSound)
                 {
                     isSound = !isSound;
-                    Debug.Log("사운도OFF");
+                    Debug.Log("사운드OFF");
                 }
                 else
                 {
-                    Debug.Log("사운도ON");
+                    Debug.Log("사운드ON");
                 }
                 break;
             case BTNType.Back:
