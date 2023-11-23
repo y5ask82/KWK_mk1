@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 420792252}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 552137497}
   m_Layer: 0
   m_Name: Jelly1
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -724,6 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  Hp: 1
 --- !u!251 &552137497
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -1087,7 +1088,7 @@ GameObject:
   - component: {fileID: 1139386178}
   m_Layer: 9
   m_Name: MainPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29937,7 +29938,7 @@ GameObject:
   - component: {fileID: 1558164287}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29958,6 +29959,37 @@ Transform:
   - {fileID: 552137493}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1637707996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1637707997}
+  m_Layer: 9
+  m_Name: melee
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1637707997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637707996}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: -0.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1690567923}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1690567922
 GameObject:
   m_ObjectHideFlags: 0
@@ -29975,7 +30007,7 @@ GameObject:
   - component: {fileID: 1690567929}
   m_Layer: 9
   m_Name: PlayerCharactor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29989,11 +30021,12 @@ Transform:
   m_GameObject: {fileID: 1690567922}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 420792252}
+  - {fileID: 1637707997}
   m_Father: {fileID: 1139386178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1690567924
@@ -30139,7 +30172,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   jumpCount: 1
-  animator: {fileID: 0}
+  animator: {fileID: 1690567928}
+  coolTime: 0.5
+  pos: {fileID: 1637707997}
+  boxSize: {x: 1.5, y: 1.5}
 --- !u!95 &1690567928
 Animator:
   serializedVersion: 5

@@ -33,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
         jumpCnt = jumpCount;
     }
 
+    private float curTime;
+    public float coolTime = 0.5f;
+    public Transform pos;
+    public Vector2 boxSize;
+
     private void Update()
     {
         isGround = Physics2D.OverlapCircle(player.position, checkRadius, islayer);
@@ -58,6 +63,40 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpCnt = jumpCount;
         }
+
+        
+        if (Input.GetKey(KeyCode.Z))
+        {
+            //공격
+            //'Z'버튼을 공격버튼으로.
+            if (curTime <= 0)
+            {
+
+                Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
+                foreach (Collider2D collider in collider2Ds)
+                {
+                    if(collider.tag == "Enemy")
+                    {
+                        collider.GetComponent<Enemy>().TakeDamage(1);
+                    }
+                }
+
+                animator.SetTrigger("Attack");
+                curTime = coolTime;
+            }
+        }
+        else
+        {
+            
+            curTime -= Time.deltaTime;
+        
+        }
+    }
+
+    private void OnDrawGizos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(pos.position, boxSize);
     }
     private void FixedUpdate()
     {

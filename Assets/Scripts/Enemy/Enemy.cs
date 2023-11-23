@@ -36,4 +36,11 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
+    public int Hp = 1;
+    
+    public void TakeDamage(int damage)
+    {
+        Hp = Hp - damage;
+    }
 }
