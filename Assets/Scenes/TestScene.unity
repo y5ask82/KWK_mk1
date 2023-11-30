@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 552137499}
   - component: {fileID: 552137498}
   - component: {fileID: 552137497}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jelly1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -30005,6 +30005,7 @@ GameObject:
   - component: {fileID: 1690567927}
   - component: {fileID: 1690567928}
   - component: {fileID: 1690567929}
+  - component: {fileID: 1690567930}
   m_Layer: 9
   m_Name: PlayerCharactor
   m_TagString: Player
@@ -30216,6 +30217,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1690567930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690567922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb47104aa78b087429a6f5647e1b1bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813119123
 GameObject:
   m_ObjectHideFlags: 0
