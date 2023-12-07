@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -7,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     Rigidbody2D myrigidbody;
+    Rigidbody2D rigid;
 
     [SerializeField]
     private float power;
@@ -38,6 +40,10 @@ public class PlayerMovement : MonoBehaviour
     public Transform pos;
     public Vector2 boxSize;
 
+    void Awake()
+    {
+        
+    }
     private void Update()
     {
         isGround = Physics2D.OverlapCircle(player.position, checkRadius, islayer);
